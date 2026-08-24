@@ -6,7 +6,7 @@ This repository contains end-to-end data analysis projects focused on transformi
 
 ## Featured Project
 
-### 🟠 Maven Fuzzy Factory — E-Commerce Data Analysis
+### Maven Fuzzy Factory — E-Commerce Data Analysis
 
 An end-to-end e-commerce analytics project analyzing website traffic, marketing performance, conversion, landing pages, products, devices, and revenue.
 
