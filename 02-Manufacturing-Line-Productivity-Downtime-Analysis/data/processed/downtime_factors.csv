@@ -1,6 +1,7 @@
 Factor,Description,Operator Error
 1,Emergency stop,No
 2,Batch change,Yes
+3,Labeling error,No
 4,Inventory shortage,No
 5,Product spill,Yes
 6,Machine adjustment,Yes
