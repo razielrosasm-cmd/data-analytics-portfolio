@@ -92,11 +92,11 @@ An end-to-end HR analytics project analyzing employee attrition, first-year work
 
 ## About
 
-I am a Mechanical Engineer transitioning into Data Analytics, combining experience in manufacturing, operations, continuous improvement, and data-driven decision making with modern analytics tools.
+I am a data professional with a background in Mechanical Engineering, bringing a strong foundation in operations, continuous improvement, and data-driven decision-making to modern analytics.
 
-I am particularly focused on **diagnostic and predictive analytics** — using data not just to describe what happened, but to model why and recommend what to do next.
+My focus is on diagnostic and predictive analytics — moving beyond descriptive reporting to model root causes, quantify business impact, and recommend actionable strategies. 
 
-My goal is to use data to identify business problems, uncover actionable insights, and support better decisions.
+My goal is to leverage data to solve complex business problems, uncover actionable insights, and drive better strategic decisions.
 
 ---
 
