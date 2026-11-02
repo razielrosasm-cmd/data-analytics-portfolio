@@ -1,8 +1,8 @@
 # Data Analytics Portfolio
 
-Welcome to my data analytics portfolio.
+**3 end-to-end projects** spanning e-commerce, manufacturing operations, and HR analytics — each taking raw data through SQL, Python, and Power BI into actionable business decisions.
 
-This repository contains end-to-end data analysis projects focused on transforming raw data into actionable business insights using SQL, Python, Power BI, and business intelligence techniques.
+Welcome to my data analytics portfolio. This repository contains complete analyst workflows focused on transforming raw data into business insights using SQL, Python, and Power BI.
 
 ## Featured Projects
 
@@ -93,6 +93,8 @@ An end-to-end HR analytics project analyzing employee attrition, first-year work
 ## About
 
 I am a Mechanical Engineer transitioning into Data Analytics, combining experience in manufacturing, operations, continuous improvement, and data-driven decision making with modern analytics tools.
+
+I am particularly focused on **diagnostic and predictive analytics** — using data not just to describe what happened, but to model why and recommend what to do next.
 
 My goal is to use data to identify business problems, uncover actionable insights, and support better decisions.
 
