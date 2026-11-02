@@ -1,0 +1,6 @@
+tenure_band,total_employees,leavers,stayers,attrition_rate_pct,gap_vs_company_pp
+0-1 years,645,225,420,34.88,18.76
+2-3 years,765,141,624,18.43,2.31
+4-5 years,918,120,798,13.07,-3.05
+6-10 years,1344,165,1179,12.28,-3.84
+10+ years,738,60,678,8.13,-7.99

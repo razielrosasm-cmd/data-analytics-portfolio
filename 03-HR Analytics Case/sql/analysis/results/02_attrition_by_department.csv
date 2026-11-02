@@ -1,0 +1,4 @@
+department,total_employees,leavers,stayers,attrition_rate_pct,gap_vs_company_pp
+Human Resources,189,57,132,30.16,14.04
+Research & Development,2883,453,2430,15.71,-0.41
+Sales,1338,201,1137,15.02,-1.1

@@ -1,0 +1,5 @@
+job_role,total_employees,leavers,attrition_rate_pct,gap_vs_benchmark_pp
+Sales Executive,37,21,56.76,40.64
+Research Scientist,27,18,66.67,50.55
+Laboratory Technician,18,12,66.67,50.55
+Manufacturing Director,14,8,57.14,41.02

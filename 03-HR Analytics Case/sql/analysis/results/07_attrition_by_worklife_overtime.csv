@@ -1,0 +1,13 @@
+work_life_balance,hours_band,total_employees,leavers,attrition_rate_pct
+Bad,1. Short (<7.5h),133,36,27.07
+Bad,2. Normal (7.5-8h),39,9,23.08
+Bad,3. Long (8h+),67,30,44.78
+Best,1. Short (<7.5h),249,25,10.04
+Best,2. Normal (7.5-8h),85,16,18.82
+Best,3. Long (8h+),120,40,33.33
+Better,1. Short (<7.5h),1370,121,8.83
+Better,2. Normal (7.5-8h),471,43,9.13
+Better,3. Long (8h+),819,216,26.37
+Good,1. Short (<7.5h),539,41,7.61
+Good,2. Normal (7.5-8h),162,33,20.37
+Good,3. Long (8h+),318,97,30.5

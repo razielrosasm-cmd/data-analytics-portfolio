@@ -1,0 +1,13 @@
+dimension,level,total_employees,leavers,attrition_rate_pct
+Environment Satisfaction,Low,845,213,25.21
+Environment Satisfaction,Medium,856,128,14.95
+Environment Satisfaction,High,1350,186,13.78
+Environment Satisfaction,Very High,1334,179,13.42
+Job Satisfaction,Low,860,197,22.91
+Job Satisfaction,High,1323,219,16.55
+Job Satisfaction,Medium,840,138,16.43
+Job Satisfaction,Very High,1367,156,11.41
+Work-Life Balance,Bad,239,75,31.38
+Work-Life Balance,Best,454,81,17.84
+Work-Life Balance,Good,1019,171,16.78
+Work-Life Balance,Better,2660,380,14.29

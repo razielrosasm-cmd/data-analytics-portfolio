@@ -1,0 +1,6 @@
+income_band,total_employees,leavers,stayers,attrition_rate_pct,gap_vs_company_pp
+1. Low (10k-20k),99,24,75,24.24,8.12
+2. Lower-Mid (20k-40k),1527,243,1284,15.91,-0.21
+3. Mid (40k-70k),1479,261,1218,17.65,1.53
+4. Upper-Mid (70k-120k),720,102,618,14.17,-1.95
+5. High (120k-200k),585,81,504,13.85,-2.27

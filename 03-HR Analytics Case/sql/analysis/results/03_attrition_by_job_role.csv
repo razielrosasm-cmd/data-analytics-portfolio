@@ -1,0 +1,10 @@
+job_role,total_employees,leavers,stayers,attrition_rate_pct,gap_vs_company_pp
+Research Director,240,57,183,23.75,7.63
+Research Scientist,876,159,717,18.15,2.03
+Sales Executive,978,165,813,16.87,0.75
+Laboratory Technician,777,126,651,16.22,0.1
+Healthcare Representative,393,57,336,14.5,-1.62
+Sales Representative,249,36,213,14.46,-1.66
+Manager,306,42,264,13.73,-2.39
+Human Resources,156,21,135,13.46,-2.66
+Manufacturing Director,435,48,387,11.03,-5.09

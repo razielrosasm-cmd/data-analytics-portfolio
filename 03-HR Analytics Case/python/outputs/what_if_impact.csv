@@ -1,0 +1,7 @@
+category,intervention,employees_affected,avg_prob_drop_pp,expected_leavers_before,expected_leavers_after,leavers_avoided
+validation_only,Everyone +1 tenure band (hypothetical),4308,4.09,697.0,520.8,176.2
+actionable,Improve EnvSat by 1 step (for Low/Medium),1672,4.02,344.7,277.5,67.2
+actionable,Improve JobSat by 1 step (for Low/Medium),1672,3.59,340.0,280.0,60.0
+actionable,Cap hours in year 1 (Long -> Normal),211,18.72,103.7,64.2,39.5
+actionable,Improve WLB by 1 step (for Bad/Good),1241,3.13,236.4,197.6,38.9
+diagnostic,Remove HR dept effect (hypothetical),187,12.07,55.0,32.4,22.6
