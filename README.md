@@ -47,6 +47,26 @@ An end-to-end manufacturing analytics project analyzing production productivity,
 
 ---
 
+### 03 — HR Analytics — Employee Attrition Case Study
+
+An end-to-end HR analytics project analyzing employee attrition, first-year workload shock, satisfaction drivers, and department anomalies to build a predictive retention model.
+
+**Tools:** SQL · Python · Power BI
+
+**Key areas analyzed:**
+
+* Baseline attrition and department performance (HR vs. R&D vs. Sales)
+* The Year-1 Workload Shock (tenure × hours overlap)
+* Environmental, job, and work-life satisfaction drivers
+* Year-7 career cliff anomaly
+* Logistic regression and risk-band calibration
+* Business recommendations and what-if impact projections
+
+**Project:**
+[View HR Analytics Case Study](./03-HR%20Analytics%20Case/)
+
+---
+
 ## Technical Skills Demonstrated
 
 | Area                  | Tools / Techniques                                                                   |
@@ -55,7 +75,7 @@ An end-to-end manufacturing analytics project analyzing production productivity,
 | Business Intelligence | Power BI                                                                             |
 | Data Visualization    | Power BI, Python                                                                     |
 | Database Analysis     | SQLite, SQL                                                                          |
-| Business Analysis     | KPI analysis, conversion analysis, funnel analysis, operational performance analysis |
+| Business Analysis     | KPI analysis, conversion analysis, funnel analysis, attrition & retention modeling   |
 | Reporting             | Executive dashboards and business recommendations                                    |
 
 ---
@@ -66,6 +86,7 @@ An end-to-end manufacturing analytics project analyzing production productivity,
 | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------- |
 | [Maven Fuzzy Factory](./01-Maven-Fuzzy-Factory/)                                                               | E-commerce analytics, marketing, conversion, products, revenue                     | SQL · Python · Power BI |
 | [Manufacturing Line Productivity & Downtime Analysis](./02-Manufacturing-Line-Productivity-Downtime-Analysis/) | Manufacturing productivity, efficiency, downtime, operator and product performance | SQL · Python · Power BI |
+| [HR Analytics Case Study](./03-HR%20Analytics%20Case/)                                                         | Employee attrition, predictive modeling, workload and satisfaction analysis        | SQL · Python · Power BI |
 
 ---
 
