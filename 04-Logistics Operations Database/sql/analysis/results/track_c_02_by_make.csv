@@ -1,0 +1,7 @@
+make,truck_months,trucks,avg_cost,avg_events,avg_downtime_hours,high_maint_pct
+International,612,17,1363.59,0.67,16.8,26.8
+Mack,504,14,1343.72,0.67,16.5,26.98
+Freightliner,540,15,1327.35,0.68,16.4,24.63
+Volvo,684,19,1319.47,0.71,18.0,25.15
+Peterbilt,576,16,1239.85,0.66,15.9,23.09
+Kenworth,396,11,1222.74,0.63,15.0,22.73

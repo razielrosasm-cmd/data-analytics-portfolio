@@ -1,0 +1,2 @@
+drivers_with_metrics,avg_on_time_rate_pct,min_on_time_rate_pct,max_on_time_rate_pct,avg_mpg,avg_idle_hours,avg_total_miles,avg_low_ontime_months
+124,44.6,36.52,50.77,6.5,7.01,965261.0,23.0

@@ -1,0 +1,3 @@
+employment_status,drivers,avg_age_at_hire,avg_years_experience,avg_hire_year,avg_n_incidents,avg_n_at_fault,avg_total_claim,cdl_a_count,cdl_b_count
+Active,124,38.0,13.7,2017.0,1.36,0.44,21397.0,124,0
+Terminated,26,36.8,12.5,2016.0,0.0,0.0,0.0,26,0

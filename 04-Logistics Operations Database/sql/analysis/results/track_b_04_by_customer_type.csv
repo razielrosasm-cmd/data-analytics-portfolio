@@ -1,0 +1,19 @@
+customer_type,primary_freight_type,trips,late_trips,late_rate_pct
+Dedicated,Electronics,4654,2645,56.83
+Spot,General,2972,1689,56.83
+Dedicated,Consumer Goods,4233,2373,56.06
+Dedicated,Automotive,4192,2350,56.06
+Dedicated,Retail,4338,2427,55.95
+Contract,Consumer Goods,5055,2820,55.79
+Spot,Electronics,6347,3519,55.44
+Spot,Consumer Goods,3334,1844,55.31
+Contract,Retail,5996,3312,55.24
+Contract,Food/Beverage,5667,3129,55.21
+Contract,Automotive,8247,4551,55.18
+Dedicated,Food/Beverage,5958,3281,55.07
+Dedicated,General,2970,1635,55.05
+Spot,Retail,4728,2602,55.03
+Spot,Food/Beverage,4273,2349,54.97
+Contract,Electronics,2987,1632,54.64
+Spot,Automotive,5202,2837,54.54
+Contract,General,4257,2313,54.33

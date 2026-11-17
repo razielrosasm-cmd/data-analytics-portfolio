@@ -1,0 +1,74 @@
+===========================================================================
+TRACK A — master_driver_clean.csv (1 row per driver)
+===========================================================================
+Source drivers.csv: 150 rows
+Target driver_attrition: 26 leavers / 150 total = 17.33%
+Final master_driver_clean.csv: 150 rows, 27 columns
+Null counts per column:
+driver_id                 0
+hire_date                 0
+termination_date        124
+driver_attrition          0
+hire_year                 0
+age_at_hire               0
+years_experience          0
+cdl_class                 0
+employment_status         0
+home_terminal             0
+n_months                 26
+avg_on_time_rate         26
+min_on_time_rate         26
+avg_mpg                  26
+total_trips_metered      26
+total_miles              26
+avg_idle_hours           26
+n_low_ontime_months      26
+has_low_ontime_month     26
+n_trips_assigned          0
+total_distance            0
+avg_idle_from_trips      26
+avg_mpg_from_trips       26
+n_incidents               0
+n_at_fault                0
+n_preventable             0
+total_claim               0
+
+===========================================================================
+TRACK B — master_trip_clean.csv (1 row per trip/load)
+===========================================================================
+Pickup events after dedup: 85410
+Delivery events after dedup: 85410
+Target late_delivery_flag: 47308 late / 85410 with target = 55.39%
+Rows with unknown target (no matching delivery event): 0
+Final master_trip_clean.csv: 85410 rows, 37 columns
+Null counts (columns with >0 nulls):
+driver_id     1714
+truck_id      1672
+trailer_id    1680
+
+===========================================================================
+TRACK C — master_truck_month_clean.csv (1 row per truck-month)
+===========================================================================
+75th percentile of maintenance_cost across 3312 truck-months = $2,409.79
+Target high_maintenance_flag: 828 positive / 3312 = 25.00%
+Anomaly utilization_rate > 1.0: 436 rows (13.16%)
+Truck-months with maintenance but no utilization record (excluded): 501
+Reconciliation: truck-months where maintenance_events != n_maintenance_records = 0 (of 3312)
+Final master_truck_month_clean.csv: 3312 rows, 24 columns
+Null counts (columns with >0 nulls):
+avg_odometer    1684
+
+===========================================================================
+CODEBOOK AND FINAL SUMMARY
+===========================================================================
+Codebook saved: 88 column entries across 3 tables
+  -> C:\Users\Anonymous\Desktop\projects\04-Logistics Operations Database\docs\codebook.csv
+
+PER-TABLE SUMMARY
+                   table  rows  cols                target  positive_rate_pct
+     master_driver_clean   150    27      driver_attrition              17.33
+       master_trip_clean 85410    37    late_delivery_flag              55.39
+master_truck_month_clean  3312    24 high_maintenance_flag              25.00
+
+Audit log: C:\Users\Anonymous\Desktop\projects\04-Logistics Operations Database\python\outputs\02_clean_report.txt
+Step 3 complete. All rows preserved. No imputation performed.

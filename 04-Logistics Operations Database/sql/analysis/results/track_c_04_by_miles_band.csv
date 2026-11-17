@@ -1,0 +1,4 @@
+miles_band,truck_months,avg_cost,avg_events,avg_downtime_hours,high_maint_pct
+3. 10-15k,1,0.0,0.0,0.0,0.0
+4. 15-20k,53,1307.51,0.64,18.2,26.42
+5. 20k+,3258,1307.58,0.67,16.5,24.98

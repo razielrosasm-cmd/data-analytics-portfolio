@@ -1,0 +1,89 @@
+table,column,dtype,source_table,description,null_pct,is_target
+master_driver_clean,driver_id,str,drivers,Driver primary key,0.0,False
+master_driver_clean,hire_date,datetime64[us],drivers,Original hire date,0.0,False
+master_driver_clean,termination_date,datetime64[us],drivers,Termination date; null = still employed,82.67,False
+master_driver_clean,driver_attrition,int64,derived (termination_date not null),"Target: 1 = left company, 0 = active",0.0,True
+master_driver_clean,hire_year,int32,derived (hire_date.year),Year driver was hired,0.0,False
+master_driver_clean,age_at_hire,float64,derived (hire_date - date_of_birth),Age at hire (years),0.0,False
+master_driver_clean,years_experience,int64,drivers,Years of driving experience at hire,0.0,False
+master_driver_clean,cdl_class,str,drivers,Commercial driver license class,0.0,False
+master_driver_clean,employment_status,str,drivers,Current employment status,0.0,False
+master_driver_clean,home_terminal,str,drivers,Home terminal city,0.0,False
+master_driver_clean,n_months,float64,agg driver_monthly_metrics,Number of months with recorded metrics,17.33,False
+master_driver_clean,avg_on_time_rate,float64,agg driver_monthly_metrics,Mean monthly on-time delivery rate,17.33,False
+master_driver_clean,min_on_time_rate,float64,agg driver_monthly_metrics,Worst single-month on-time rate,17.33,False
+master_driver_clean,avg_mpg,float64,agg driver_monthly_metrics,Mean monthly MPG,17.33,False
+master_driver_clean,total_trips_metered,float64,agg driver_monthly_metrics,Sum of monthly trips completed,17.33,False
+master_driver_clean,total_miles,float64,agg driver_monthly_metrics,Sum of monthly miles,17.33,False
+master_driver_clean,avg_idle_hours,float64,agg driver_monthly_metrics,Mean monthly idle hours,17.33,False
+master_driver_clean,n_low_ontime_months,float64,agg driver_monthly_metrics,Months with on-time rate below 50% (anomaly count),17.33,False
+master_driver_clean,has_low_ontime_month,float64,derived,1 if driver ever had a month below 50% on-time,17.33,False
+master_driver_clean,n_trips_assigned,float64,agg trips,Trips with this driver assigned,0.0,False
+master_driver_clean,total_distance,float64,agg trips,Sum of actual_distance_miles,0.0,False
+master_driver_clean,avg_idle_from_trips,float64,agg trips,Mean idle_time_hours per trip,17.33,False
+master_driver_clean,avg_mpg_from_trips,float64,agg trips,Mean average_mpg per trip,17.33,False
+master_driver_clean,n_incidents,float64,agg safety_incidents,Number of safety incidents,0.0,False
+master_driver_clean,n_at_fault,float64,agg safety_incidents,Incidents where driver was at fault,0.0,False
+master_driver_clean,n_preventable,float64,agg safety_incidents,Preventable incidents,0.0,False
+master_driver_clean,total_claim,float64,agg safety_incidents,Total claim amount USD,0.0,False
+master_trip_clean,load_id,str,loads,Load primary key,0.0,False
+master_trip_clean,load_date,datetime64[us],loads,Date load was booked,0.0,False
+master_trip_clean,load_type,str,loads,Dry Van / Refrigerated / etc.,0.0,False
+master_trip_clean,weight_lbs,int64,loads,Cargo weight (pounds),0.0,False
+master_trip_clean,pieces,int64,loads,Number of pieces,0.0,False
+master_trip_clean,revenue,float64,loads,Load revenue (USD),0.0,False
+master_trip_clean,fuel_surcharge,float64,loads,Fuel surcharge (USD),0.0,False
+master_trip_clean,accessorial_charges,int64,loads,Extra charges (USD),0.0,False
+master_trip_clean,load_status,str,loads,Completed / Cancelled / etc.,0.0,False
+master_trip_clean,booking_type,str,loads,Spot or Dedicated,0.0,False
+master_trip_clean,trip_id,str,trips,Trip primary key,0.0,False
+master_trip_clean,driver_id,str,trips,Assigned driver; null = unassigned (2.01%),2.01,False
+master_trip_clean,truck_id,str,trips,Assigned truck; null = unassigned (1.96%),1.96,False
+master_trip_clean,trailer_id,str,trips,Assigned trailer; null = unassigned (1.97%),1.97,False
+master_trip_clean,dispatch_date,datetime64[us],trips,Trip dispatch date,0.0,False
+master_trip_clean,actual_distance_miles,int64,trips,Distance driven,0.0,False
+master_trip_clean,actual_duration_hours,float64,trips,Trip duration,0.0,False
+master_trip_clean,fuel_gallons_used,float64,trips,Fuel consumed,0.0,False
+master_trip_clean,average_mpg,float64,trips,Trip MPG,0.0,False
+master_trip_clean,idle_time_hours,float64,trips,Idle hours during trip,0.0,False
+master_trip_clean,trip_status,str,trips,Completed / Cancelled / etc.,0.0,False
+master_trip_clean,route_id,str,routes,Lane primary key,0.0,False
+master_trip_clean,origin_city,str,routes,Origin city,0.0,False
+master_trip_clean,destination_city,str,routes,Destination city,0.0,False
+master_trip_clean,typical_distance_miles,int64,routes,Lane typical distance,0.0,False
+master_trip_clean,base_rate_per_mile,float64,routes,Lane base rate,0.0,False
+master_trip_clean,typical_transit_days,int64,routes,Lane scheduled transit,0.0,False
+master_trip_clean,customer_id,str,customers,Customer primary key,0.0,False
+master_trip_clean,customer_type,str,customers,Contract / Dedicated / etc.,0.0,False
+master_trip_clean,credit_terms_days,int64,customers,Customer payment terms,0.0,False
+master_trip_clean,primary_freight_type,str,customers,Customer freight category,0.0,False
+master_trip_clean,pickup_on_time_flag,bool,delivery_events,Pickup on-time (True/False); null if no pickup event,0.0,False
+master_trip_clean,pickup_detention_minutes,int64,delivery_events,Pickup detention minutes,0.0,False
+master_trip_clean,pickup_late_flag,int64,derived,1 = pickup was late,0.0,False
+master_trip_clean,delivery_on_time_flag,bool,delivery_events,Delivery on-time (True/False),0.0,False
+master_trip_clean,delivery_detention_minutes,int64,delivery_events,Delivery detention minutes,0.0,False
+master_trip_clean,late_delivery_flag,int64,derived,"Target: 1 = delivery was late, 0 = on time",0.0,True
+master_truck_month_clean,truck_id,str,truck_utilization_metrics,Truck primary key,0.0,False
+master_truck_month_clean,month,datetime64[us],truck_utilization_metrics,Month start (first of month),0.0,False
+master_truck_month_clean,trips_completed,int64,truck_utilization_metrics,Trips in month,0.0,False
+master_truck_month_clean,total_miles,int64,truck_utilization_metrics,Miles in month,0.0,False
+master_truck_month_clean,total_revenue,float64,truck_utilization_metrics,Revenue in month,0.0,False
+master_truck_month_clean,average_mpg,float64,truck_utilization_metrics,Mean MPG in month,0.0,False
+master_truck_month_clean,maintenance_events,int64,truck_utilization_metrics,Maintenance event count from source,0.0,False
+master_truck_month_clean,maintenance_cost,float64,truck_utilization_metrics,Maintenance cost USD,0.0,False
+master_truck_month_clean,downtime_hours,float64,truck_utilization_metrics,Downtime hours,0.0,False
+master_truck_month_clean,utilization_rate,float64,truck_utilization_metrics,Utilization (can exceed 1.0),0.0,False
+master_truck_month_clean,high_maintenance_flag,int64,derived (>=75th pct),Target: 1 = top-quartile cost month,0.0,True
+master_truck_month_clean,utilization_over_100pct,int64,derived (utilization > 1.0),Anomaly flag for utilization_rate > 1.0,0.0,False
+master_truck_month_clean,make,str,trucks,Truck make (e.g. Peterbilt),0.0,False
+master_truck_month_clean,model_year,int64,trucks,Model year,0.0,False
+master_truck_month_clean,acquisition_date,datetime64[us],trucks,Purchase date,0.0,False
+master_truck_month_clean,acquisition_mileage,int64,trucks,Odometer at purchase,0.0,False
+master_truck_month_clean,fuel_type,str,trucks,Diesel etc.,0.0,False
+master_truck_month_clean,tank_capacity_gallons,int64,trucks,Tank size,0.0,False
+master_truck_month_clean,status,str,trucks,Active / Maintenance / etc.,0.0,False
+master_truck_month_clean,home_terminal,str,trucks,Home terminal city,0.0,False
+master_truck_month_clean,truck_age_years,float64,derived (month - acquisition_date),Truck age at month,0.0,False
+master_truck_month_clean,n_maintenance_records,float64,agg maintenance_records,Count of maintenance events in month,0.0,False
+master_truck_month_clean,n_preventive,float64,agg maintenance_records,Preventive maintenance count,0.0,False
+master_truck_month_clean,avg_odometer,float64,agg maintenance_records,Mean odometer at maintenance,50.85,False

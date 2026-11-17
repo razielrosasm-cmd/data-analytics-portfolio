@@ -1,0 +1,390 @@
+===========================================================================
+FILE: customers.csv
+===========================================================================
+Shape: 200 rows x 8 columns
+
+Dtypes:
+customer_id                   str
+customer_name                 str
+customer_type                 str
+credit_terms_days           int64
+primary_freight_type          str
+account_status                str
+contract_start_date           str
+annual_revenue_potential    int64
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+  customer_id    customer_name customer_type  credit_terms_days primary_freight_type account_status contract_start_date  annual_revenue_potential
+0   CUST00001  Metro Wholesale     Dedicated                 60              General       Inactive          2020-02-20                    985117
+1   CUST00002  National Retail      Contract                 30               Retail         Active          2021-06-02                   4936566
+2   CUST00003   XYZ Industries      Contract                 30       Consumer Goods         Active          2020-09-04                   3102814
+
+===========================================================================
+FILE: delivery_events.csv
+===========================================================================
+Shape: 170,820 rows x 11 columns
+
+Dtypes:
+event_id                str
+load_id                 str
+trip_id                 str
+event_type              str
+facility_id             str
+scheduled_datetime      str
+actual_datetime         str
+detention_minutes     int64
+on_time_flag           bool
+location_city           str
+location_state          str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+      event_id       load_id       trip_id event_type facility_id          scheduled_datetime             actual_datetime  detention_minutes  on_time_flag location_city location_state
+0  EVT00000001  LOAD00000001  TRIP00000001     Pickup    FAC00034  2022-01-01 18:00:00.000000  2022-01-01 20:58:55.918185                  0         False       Houston             TX
+1  EVT00000002  LOAD00000001  TRIP00000001   Delivery    FAC00046  2022-01-02 23:10:55.918185  2022-01-02 21:30:22.142060                230          True       Detroit             MI
+2  EVT00000003  LOAD00000002  TRIP00000002     Pickup    FAC00015  2022-01-01 18:00:00.000000  2022-01-01 17:37:26.608430                 62          True   Kansas City             MO
+
+===========================================================================
+FILE: driver_monthly_metrics.csv
+===========================================================================
+Shape: 4,464 rows x 9 columns
+
+Dtypes:
+driver_id                    str
+month                        str
+trips_completed            int64
+total_miles                int64
+total_revenue            float64
+average_mpg              float64
+total_fuel_gallons       float64
+on_time_delivery_rate    float64
+average_idle_hours       float64
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+  driver_id       month  trips_completed  total_miles  total_revenue  average_mpg  total_fuel_gallons  on_time_delivery_rate  average_idle_hours
+0  DRV00001  2022-01-01               26        36620       79141.59         6.61              5574.7                  0.385                 8.2
+1  DRV00001  2022-02-01                9        13515       27133.87         6.69              2095.1                  0.333                 6.8
+2  DRV00001  2022-03-01               20        30361       62399.62         6.36              4792.2                  0.550                 7.5
+
+===========================================================================
+FILE: drivers.csv
+===========================================================================
+Shape: 150 rows x 12 columns
+
+Dtypes:
+driver_id              str
+first_name             str
+last_name              str
+hire_date              str
+termination_date       str
+license_number         str
+license_state          str
+date_of_birth          str
+home_terminal          str
+employment_status      str
+cdl_class              str
+years_experience     int64
+
+Columns with nulls:
+                  null_count  null_pct
+termination_date         124     82.67
+
+Sample (first 3 rows):
+  driver_id first_name  last_name   hire_date termination_date license_number license_state date_of_birth   home_terminal employment_status cdl_class  years_experience
+0  DRV00001   Jennifer  Hernandez  2014-10-31              NaN    DL673510887            WA    1973-11-07          Denver            Active         A                 3
+1  DRV00002    William     Martin  2020-10-02              NaN    DL128955006            GA    1976-11-03        Columbus            Active         A                20
+2  DRV00003    Charles  Hernandez  2021-09-21              NaN    DL523076025            NC    1970-04-06  Salt Lake City            Active         A                19
+
+===========================================================================
+FILE: facilities.csv
+===========================================================================
+Shape: 50 rows x 9 columns
+
+Dtypes:
+facility_id            str
+facility_name          str
+facility_type          str
+city                   str
+state                  str
+latitude           float64
+longitude          float64
+dock_doors           int64
+operating_hours        str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+  facility_id                  facility_name        facility_type         city state  latitude  longitude  dock_doors operating_hours
+0    FAC00001    Houston Distribution Center           Cross-Dock      Houston    TX   29.7604   -95.3698         125            24/7
+1    FAC00002                Kansas City Hub           Cross-Dock  Kansas City    MO   39.0997   -94.5786          33         7AM-7PM
+2    FAC00003  Charlotte Distribution Center  Distribution Center    Charlotte    NC   35.2271   -80.8431         138            24/7
+
+===========================================================================
+FILE: fuel_purchases.csv
+===========================================================================
+Shape: 196,442 rows x 11 columns
+
+Dtypes:
+fuel_purchase_id        str
+trip_id                 str
+truck_id                str
+driver_id               str
+purchase_date           str
+location_city           str
+location_state          str
+gallons             float64
+price_per_gallon    float64
+total_cost          float64
+fuel_card_number        str
+
+Columns with nulls:
+           null_count  null_pct
+truck_id         3880      1.98
+driver_id        3988      2.03
+
+Sample (first 3 rows):
+  fuel_purchase_id       trip_id  truck_id driver_id        purchase_date location_city location_state  gallons  price_per_gallon  total_cost fuel_card_number
+0     FUEL00000001  TRIP00051284  TRK00045  DRV00102  2023-10-22 05:00:00      Columbus             MN    131.6             3.399      447.31         FC567161
+1     FUEL00000002  TRIP00073723  TRK00013       NaN  2024-08-04 08:00:00      New York             AZ    139.9             3.180      444.88         FC717910
+2     FUEL00000003  TRIP00018286  TRK00024  DRV00142  2022-08-23 13:00:00       Seattle             NE    189.3             3.804      720.10         FC912816
+
+===========================================================================
+FILE: loads.csv
+===========================================================================
+Shape: 85,410 rows x 12 columns
+
+Dtypes:
+load_id                    str
+customer_id                str
+route_id                   str
+load_date                  str
+load_type                  str
+weight_lbs               int64
+pieces                   int64
+revenue                float64
+fuel_surcharge         float64
+accessorial_charges      int64
+load_status                str
+booking_type               str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+        load_id customer_id  route_id   load_date     load_type  weight_lbs  pieces  revenue  fuel_surcharge  accessorial_charges load_status booking_type
+0  LOAD00000001   CUST00183  RTE00019  2022-01-01       Dry Van       19178      13  3045.23          406.72                  100   Completed         Spot
+1  LOAD00000002   CUST00076  RTE00058  2022-01-01       Dry Van       27761      22  1224.48           98.61                    0   Completed    Dedicated
+2  LOAD00000003   CUST00027  RTE00048  2022-01-01  Refrigerated       35594      16  7171.12          792.88                    0   Completed         Spot
+
+===========================================================================
+FILE: maintenance_records.csv
+===========================================================================
+Shape: 2,920 rows x 12 columns
+
+Dtypes:
+maintenance_id             str
+truck_id                   str
+maintenance_date           str
+maintenance_type           str
+odometer_reading         int64
+labor_hours            float64
+labor_cost             float64
+parts_cost             float64
+total_cost             float64
+facility_location          str
+downtime_hours         float64
+service_description        str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+  maintenance_id  truck_id maintenance_date maintenance_type  odometer_reading  labor_hours  labor_cost  parts_cost  total_cost facility_location  downtime_hours   service_description
+0  MAINT00000001  TRK00085       2022-01-01       Inspection            400255          7.8      781.42       10.41      791.83       Kansas City            22.2  Emergency Inspection
+1  MAINT00000002  TRK00041       2022-01-01             Tire            268041          0.9       80.91     3207.16     3288.07           Seattle             8.0        Scheduled Tire
+2  MAINT00000003  TRK00090       2022-01-01       Preventive            698915          7.2      733.18     1570.57     2303.75             Miami            16.5    Routine Preventive
+
+===========================================================================
+FILE: routes.csv
+===========================================================================
+Shape: 58 rows x 9 columns
+
+Dtypes:
+route_id                      str
+origin_city                   str
+origin_state                  str
+destination_city              str
+destination_state             str
+typical_distance_miles      int64
+base_rate_per_mile        float64
+fuel_surcharge_rate       float64
+typical_transit_days        int64
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+   route_id origin_city origin_state destination_city destination_state  typical_distance_miles  base_rate_per_mile  fuel_surcharge_rate  typical_transit_days
+0  RTE00001     Atlanta           GA          Chicago                IL                     677                1.70                 0.19                     1
+1  RTE00002     Atlanta           GA            Miami                FL                     697                2.08                 0.22                     1
+2  RTE00003     Chicago           IL      Los Angeles                CA                    2003                2.55                 0.29                     3
+
+===========================================================================
+FILE: safety_incidents.csv
+===========================================================================
+Shape: 170 rows x 15 columns
+
+Dtypes:
+incident_id                str
+trip_id                    str
+truck_id                   str
+driver_id                  str
+incident_date              str
+incident_type              str
+location_city              str
+location_state             str
+at_fault_flag             bool
+injury_flag               bool
+vehicle_damage_cost    float64
+cargo_damage_cost      float64
+claim_amount           float64
+preventable_flag          bool
+description                str
+
+Columns with nulls:
+           null_count  null_pct
+truck_id            1      0.59
+driver_id           1      0.59
+
+Sample (first 3 rows):
+   incident_id       trip_id  truck_id driver_id        incident_date       incident_type location_city location_state  at_fault_flag  injury_flag  vehicle_damage_cost  cargo_damage_cost  claim_amount  preventable_flag                          description
+0  INC00000001  TRIP00036079  TRK00006  DRV00006  2023-04-09 14:00:00    Moving Violation      Columbus             PA           True        False             12629.26               0.00      12629.26              True  Severe incident involving equipment
+1  INC00000002  TRIP00032462  TRK00084  DRV00006  2023-02-19 11:00:00    Moving Violation      Columbus             NC          False        False              2700.70           14284.24      16984.94             False    Severe incident involving weather
+2  INC00000003  TRIP00067583  TRK00106  DRV00119  2024-05-20 01:00:00  Customer Complaint       Seattle             OK           True        False             24302.32               0.00      24302.32              True     Minor incident involving traffic
+
+===========================================================================
+FILE: trailers.csv
+===========================================================================
+Shape: 180 rows x 9 columns
+
+Dtypes:
+trailer_id            str
+trailer_number      int64
+trailer_type          str
+length_feet         int64
+model_year          int64
+vin                   str
+acquisition_date      str
+status                str
+current_location      str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+  trailer_id  trailer_number  trailer_type  length_feet  model_year                 vin acquisition_date  status current_location
+0   TRL00001            4290  Refrigerated           53        2016  1AV889081755621178       2018-05-11  Active      Kansas City
+1   TRL00002            8848       Dry Van           53        2018  1BU942062588832828       2018-11-24  Active      Kansas City
+2   TRL00003            6147       Dry Van           53        2022  1AV669057807416326       2019-01-28  Active        Milwaukee
+
+===========================================================================
+FILE: trips.csv
+===========================================================================
+Shape: 85,410 rows x 12 columns
+
+Dtypes:
+trip_id                      str
+load_id                      str
+driver_id                    str
+truck_id                     str
+trailer_id                   str
+dispatch_date                str
+actual_distance_miles      int64
+actual_duration_hours    float64
+fuel_gallons_used        float64
+average_mpg              float64
+idle_time_hours          float64
+trip_status                  str
+
+Columns with nulls:
+            null_count  null_pct
+driver_id         1714      2.01
+truck_id          1672      1.96
+trailer_id        1680      1.97
+
+Sample (first 3 rows):
+        trip_id       load_id driver_id  truck_id trailer_id dispatch_date  actual_distance_miles  actual_duration_hours  fuel_gallons_used  average_mpg  idle_time_hours trip_status
+0  TRIP00000001  LOAD00000001  DRV00117  TRK00035   TRL00167    2022-01-01                   1314                   26.2              183.8         7.15              3.5   Completed
+1  TRIP00000002  LOAD00000002  DRV00141  TRK00108   TRL00082    2022-01-01                    515                    8.6               93.6         5.50              8.3   Completed
+2  TRIP00000003  LOAD00000003  DRV00032  TRK00031   TRL00138    2022-01-01                   2509                   45.0              339.1         7.40             12.0   Completed
+
+===========================================================================
+FILE: truck_utilization_metrics.csv
+===========================================================================
+Shape: 3,312 rows x 10 columns
+
+Dtypes:
+truck_id                  str
+month                     str
+trips_completed         int64
+total_miles             int64
+total_revenue         float64
+average_mpg           float64
+maintenance_events      int64
+maintenance_cost      float64
+downtime_hours        float64
+utilization_rate      float64
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+   truck_id       month  trips_completed  total_miles  total_revenue  average_mpg  maintenance_events  maintenance_cost  downtime_hours  utilization_rate
+0  TRK00001  2022-01-01               22        39269       84792.02         6.78                   2           4380.98            63.1             0.710
+1  TRK00001  2022-02-01               27        40787       88809.05         6.23                   0              0.00             0.0             0.964
+2  TRK00001  2022-03-01               34        57422      120453.71         6.49                   0              0.00             0.0             1.097
+
+===========================================================================
+FILE: trucks.csv
+===========================================================================
+Shape: 120 rows x 11 columns
+
+Dtypes:
+truck_id                   str
+unit_number              int64
+make                       str
+model_year               int64
+vin                        str
+acquisition_date           str
+acquisition_mileage      int64
+fuel_type                  str
+tank_capacity_gallons    int64
+status                     str
+home_terminal              str
+
+Nulls: none detected.
+
+Sample (first 3 rows):
+   truck_id  unit_number       make  model_year                 vin acquisition_date  acquisition_mileage fuel_type  tank_capacity_gallons       status home_terminal
+0  TRK00001         3463  Peterbilt        2016  1VV205190335317039       2017-04-27                18814    Diesel                    200       Active         Omaha
+1  TRK00002         6461   Kenworth        2015  1NV753749606229960       2018-10-04                26795    Diesel                    150       Active       Seattle
+2  TRK00003         2335  Peterbilt        2018  1NT803101860493229       2020-09-17                11795    Diesel                    150  Maintenance       Atlanta
+
+===========================================================================
+SUMMARY TABLE
+===========================================================================
+                         file   rows  columns  cols_with_nulls
+                customers.csv    200        8                0
+          delivery_events.csv 170820       11                0
+   driver_monthly_metrics.csv   4464        9                0
+                  drivers.csv    150       12                1
+               facilities.csv     50        9                0
+           fuel_purchases.csv 196442       11                2
+                    loads.csv  85410       12                0
+      maintenance_records.csv   2920       12                0
+                   routes.csv     58        9                0
+         safety_incidents.csv    170       15                2
+                 trailers.csv    180        9                0
+                    trips.csv  85410       12                3
+truck_utilization_metrics.csv   3312       10                0
+                   trucks.csv    120       11                0

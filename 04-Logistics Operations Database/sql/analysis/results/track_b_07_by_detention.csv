@@ -1,0 +1,5 @@
+detention_band,trips,late_trips,late_rate_pct,avg_duration_hours
+1. zero,9695,5327,54.95,25.1
+2. 1-59 min,18594,10297,55.38,25.0
+3. 60-119 min,18949,10399,54.88,25.0
+4. 120-239 min,38172,21285,55.76,25.0

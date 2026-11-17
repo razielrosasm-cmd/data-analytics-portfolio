@@ -1,0 +1,4 @@
+preventive_band,truck_months,avg_cost,avg_total_events,avg_downtime_hours,high_maint_pct
+1. none,3010,1098.37,0.58,14.1,20.66
+2. one,284,3261.62,1.52,39.4,66.55
+3. two-three,18,5390.42,2.56,62.0,94.44

@@ -1,0 +1,4 @@
+booking_type,trips,late_trips,late_rate_pct,avg_distance_miles
+Dedicated,42337,23490,55.48,1431.0
+Contract,21545,11940,55.42,1426.0
+Spot,21528,11878,55.17,1434.0

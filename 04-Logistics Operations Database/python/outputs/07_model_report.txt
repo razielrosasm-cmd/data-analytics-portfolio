@@ -1,0 +1,173 @@
+===========================================================================
+STEP 7 — TRACK C LOGISTIC REGRESSION
+===========================================================================
+
+===========================================================================
+1. DATA PREPARATION
+===========================================================================
+
+Loaded master_truck_month_clean.csv: 3,312 rows
+
+Feature construction:
+  had_preventive_visit : 1 if n_preventive >= 1, else 0
+  is_old_truck         : 1 if truck_age_years >= 8, else 0
+  make_premium         : 1 if make in [Peterbilt, Kenworth], else 0
+  total_miles_k        : total_miles / 1000
+
+Target 'high_maintenance_flag': 828 positive / 3,312 total = 25.00%
+Class ratio (negative / positive): 3.00
+Events per feature: 118.3 (rule of thumb: >= 10)
+
+Feature univariate summary:
+       had_preventive_visit  truck_age_years  is_old_truck  total_miles_k  downtime_hours  utilization_rate  make_premium  high_maintenance_flag
+count              3312.000         3312.000      3312.000       3312.000        3312.000          3312.000      3312.000               3312.000
+mean                  0.091            5.086         0.096         36.152          16.550             0.830         0.293                  0.250
+std                   0.288            2.167         0.295          8.213          22.997             0.166         0.455                  0.433
+min                   0.000            0.420         0.000         12.680           0.000             0.387         0.000                  0.000
+25%                   0.000            3.378         0.000         30.444           0.000             0.710         0.000                  0.000
+50%                   0.000            5.140         0.000         35.758           0.000             0.833         0.000                  0.000
+75%                   0.000            6.772         0.000         41.551          30.200             0.935         1.000                  0.250
+max                   1.000            9.850         1.000         71.177         152.200             1.484         1.000                  1.000
+
+Null check: no nulls in any model feature or target.
+
+===========================================================================
+2. MULTICOLLINEARITY PRE-CHECK (VIF)
+===========================================================================
+
+             feature  VIF
+had_preventive_visit 1.13
+     truck_age_years 1.42
+        is_old_truck 1.42
+       total_miles_k 4.03
+      downtime_hours 1.13
+    utilization_rate 4.04
+        make_premium 1.00
+
+All VIF < 5 — no multicollinearity concern.
+
+===========================================================================
+3. LOGISTIC REGRESSION FIT
+===========================================================================
+
+Design matrix shape: (3312, 9)
+Target shape       : (3312,)
+
+                             Logit Regression Results                            
+=================================================================================
+Dep. Variable:     high_maintenance_flag   No. Observations:                 3312
+Model:                             Logit   Df Residuals:                     3303
+Method:                              MLE   Df Model:                            8
+Date:                   Mon, 16 Nov 2026   Pseudo R-squ.:                  0.3494
+Time:                           00:36:50   Log-Likelihood:                -1211.7
+converged:                          True   LL-Null:                       -1862.5
+Covariance Type:               nonrobust   LLR p-value:                1.081e-275
+========================================================================================
+                           coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   -3.0949      0.309    -10.005      0.000      -3.701      -2.489
+had_preventive_visit     2.5286      0.259      9.747      0.000       2.020       3.037
+truck_age_years          0.0241      0.029      0.840      0.401      -0.032       0.080
+is_old_truck            -0.2922      0.213     -1.370      0.171      -0.710       0.126
+total_miles_k           -0.0097      0.013     -0.765      0.444      -0.035       0.015
+downtime_hours           0.0735      0.003     25.083      0.000       0.068       0.079
+utilization_rate         0.6729      0.628      1.072      0.284      -0.557       1.903
+make_premium            -0.0950      0.115     -0.825      0.409      -0.321       0.131
+prev_x_downtime         -0.0452      0.007     -6.720      0.000      -0.058      -0.032
+========================================================================================
+
+===========================================================================
+4. ODDS RATIO TABLE
+===========================================================================
+
+             feature    coef  odds_ratio  ci_lower  ci_upper  p_value  significant_at_05
+               const -3.0949      0.0453    0.0247    0.0830   0.0000               True
+had_preventive_visit  2.5286     12.5354    7.5393   20.8423   0.0000               True
+     truck_age_years  0.0241      1.0244    0.9683    1.0838   0.4007              False
+        is_old_truck -0.2922      0.7466    0.4915    1.1342   0.1708              False
+       total_miles_k -0.0097      0.9903    0.9660    1.0153   0.4443              False
+      downtime_hours  0.0735      1.0763    1.0701    1.0825   0.0000               True
+    utilization_rate  0.6729      1.9598    0.5728    6.7050   0.2836              False
+        make_premium -0.0950      0.9094    0.7256    1.1396   0.4093              False
+     prev_x_downtime -0.0452      0.9558    0.9432    0.9685   0.0000               True
+
+Plain-English interpretation:
+
+  had_preventive_visit      : OR = 12.535  (+1153.5% more likely)  — significant (p = 0.0000)
+  truck_age_years           : OR = 1.024  (+2.4% more likely)  — NOT significant (p = 0.4007)
+  is_old_truck              : OR = 0.747  (-25.3% less likely)  — NOT significant (p = 0.1708)
+  total_miles_k             : OR = 0.990  (-1.0% less likely)  — NOT significant (p = 0.4443)
+  downtime_hours            : OR = 1.076  (+7.6% more likely)  — significant (p = 0.0000)
+  utilization_rate          : OR = 1.960  (+96.0% more likely)  — NOT significant (p = 0.2836)
+  make_premium              : OR = 0.909  (-9.1% less likely)  — NOT significant (p = 0.4093)
+  prev_x_downtime           : OR = 0.956  (-4.4% less likely)  — significant (p = 0.0000)
+
+===========================================================================
+5. RISK-BAND CALIBRATION
+===========================================================================
+
+Decile | Truck-months | Predicted % | Observed % | Gap (pp)
+-----------------------------------------------------------------
+   0   |    332       |   4.86      |   0.00    |  -4.86
+   1   |    331       |   5.36      |   0.00    |  -5.36
+   2   |    331       |   5.65      |   0.00    |  -5.65
+   3   |    331       |   5.90      |   0.00    |  -5.90
+   4   |    331       |   6.27      |   2.11    |  -4.16
+   5   |    331       |   9.92      |  31.72    | +21.80
+   6   |    331       |  22.58      |  35.65    | +13.07
+   7   |    331       |  43.41      |  45.92    |  +2.51
+   8   |    331       |  61.13      |  51.36    |  -9.77
+   9   |    332       |  84.80      |  83.13    |  -1.67
+
+Top decile observed high-maint rate : 83.13%
+Bottom decile observed high-maint rate: 0.00%
+Discrimination gap (top - bottom)   : +83.13 pp
+
+===========================================================================
+6. WHAT-IF SIMULATION — shift 10% of zero-visit months into preventive
+===========================================================================
+
+Zero-preventive months in sample : 3,010
+10% to shift into preventive     : 301
+
+Predicted expected high-maint months (sum of probabilities):
+  Baseline        :      828.0 expected months
+  Intervention    :      923.4 expected months
+  Delta           :      +95.4 expected months
+
+Predicted high-maint months at threshold 0.5:
+  Baseline        :        723 months
+  Intervention    :        792 months
+  Delta           :        +69 months
+
+Cost translation (avg high-maint month = $4,052.45 from C1):
+  Expected-month delta × avg cost = $+386,679
+
+CAVEAT: This is a causal projection built on an observational model.
+        The 'intervention' assumes the model captures a causal effect of
+        preventive visits, not a mere correlation. See Limitations.
+
+===========================================================================
+7. MODEL DIAGNOSTICS
+===========================================================================
+
+Pseudo R-squared (McFadden)   : 0.3494
+AIC                            : 2441.35
+LL Ratio (model vs null)       : 1301.56
+LL Ratio p-value               : 1.0811e-275
+Number of observations         : 3,312
+Number of features (incl const): 9
+
+Verdict on Pseudo R-squared    : SUSPICIOUSLY HIGH — possible overfit or proxy feature. Investigate.
+
+===========================================================================
+8. FINAL SUMMARY
+===========================================================================
+
+Strongest positive predictor : had_preventive_visit (OR = 12.535)
+Model discriminative range   : +83.13 pp (top decile - bottom decile)
+What-if cost impact          : $+386,679
+Report saved                 : C:\Users\Anonymous\Desktop\projects\04-Logistics Operations Database\python\outputs\07_model_report.txt
+
+STATUS: Step 7 complete. Review the odds ratio table and calibration before
+        writing the executive summary in Step 9.

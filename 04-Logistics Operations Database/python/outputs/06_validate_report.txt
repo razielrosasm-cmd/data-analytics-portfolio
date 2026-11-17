@@ -1,0 +1,128 @@
+===========================================================================
+STEP 6 — SQL vs PYTHON CROSS-CHECK
+===========================================================================
+Python    : 3.12.10
+pandas    : 3.1.1
+Report    : C:\Users\Anonymous\Desktop\projects\04-Logistics Operations Database\python\outputs\06_validate_report.txt
+
+===========================================================================
+CHECK 1 — Track A overall attrition rate (SQL: A1a)
+===========================================================================
+
+Loaded master_driver_clean.csv: 150 rows
+Python leavers: 26
+Python rate   : 17.33%
+
+  [ OK ]  driver count (150)
+         Python = 150.0
+         SQL    = 150.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  leaver count (26)
+         Python = 26.0
+         SQL    = 26.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  attrition rate % (17.33)
+         Python = 17.33
+         SQL    = 17.33
+         diff   = 0.000000  (tolerance 0.01)
+
+===========================================================================
+CHECK 2 — Track B delivery late rate (SQL: B1a)
+===========================================================================
+
+Loaded master_trip_clean.csv: 85,410 rows
+Python late count : 47,308
+Python late rate  : 55.39%
+
+  [ OK ]  trip count (85410)
+         Python = 85410.0
+         SQL    = 85410.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  late count (47308)
+         Python = 47308.0
+         SQL    = 47308.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  late rate % (55.39)
+         Python = 55.39
+         SQL    = 55.39
+         diff   = 0.000000  (tolerance 0.01)
+
+===========================================================================
+CHECK 3 — Track C preventive maintenance cost (SQL: C5)
+===========================================================================
+
+Loaded master_truck_month_clean.csv: 3,312 rows
+
+Python band summary:
+preventive_band  truck_months  avg_cost
+        1. none          3010   1098.37
+         2. one           284   3261.62
+   3. two-three            18   5390.42
+
+  [ OK ]  C5 1. none — truck_months (3010)
+         Python = 3010.0
+         SQL    = 3010.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  C5 1. none — avg_cost ($1098.37)
+         Python = 1098.37
+         SQL    = 1098.37
+         diff   = 0.000000  (tolerance 0.01)
+  [ OK ]  C5 2. one — truck_months (284)
+         Python = 284.0
+         SQL    = 284.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  C5 2. one — avg_cost ($3261.62)
+         Python = 3261.62
+         SQL    = 3261.62
+         diff   = 0.000000  (tolerance 0.01)
+  [ OK ]  C5 3. two-three — truck_months (18)
+         Python = 18.0
+         SQL    = 18.0
+         diff   = 0.000000  (tolerance 0.0)
+  [ OK ]  C5 3. two-three — avg_cost ($5390.42)
+         Python = 5390.42
+         SQL    = 5390.42
+         diff   = 0.000000  (tolerance 0.01)
+
+===========================================================================
+CHECK 4 — Track C utilization anomaly profile (SQL: C8)
+===========================================================================
+
+Python anomaly summary:
+ utilization_over_100pct  truck_months  avg_utilization_rate  avg_total_miles  avg_total_revenue  avg_maintenance_cost  avg_trips
+                       0          2876                  0.79         34325.29           73792.83               1312.46      23.99
+                       1           436                  1.11         48203.34          103477.28               1272.39      33.85
+
+  [ OK ]  C8 anomalous truck_months (SQL 436)
+         Python = 436.0
+         SQL    = 436.0
+         diff   = 0.000000  (tolerance 0.01)
+  [ OK ]  C8 anomalous avg_utilization_rate (SQL 1.11)
+         Python = 1.11
+         SQL    = 1.11
+         diff   = 0.000000  (tolerance 0.01)
+  [ OK ]  C8 anomalous avg_total_miles (SQL 48203)
+         Python = 48203.34
+         SQL    = 48203.0
+         diff   = 0.340000  (tolerance 1.0)
+  [ OK ]  C8 anomalous avg_total_revenue (SQL 103477)
+         Python = 103477.28
+         SQL    = 103477.0
+         diff   = 0.280000  (tolerance 1.0)
+  [ OK ]  C8 anomalous avg_maintenance_cost (SQL 1272.39)
+         Python = 1272.39
+         SQL    = 1272.39
+         diff   = 0.000000  (tolerance 0.01)
+  [ OK ]  C8 anomalous avg_trips (SQL 33.8)
+         Python = 33.85
+         SQL    = 33.8
+         diff   = 0.050000  (tolerance 0.1)
+
+===========================================================================
+FINAL VERDICT
+===========================================================================
+Checks passed : 18 / 18
+Report saved  : C:\Users\Anonymous\Desktop\projects\04-Logistics Operations Database\python\outputs\06_validate_report.txt
+
+STATUS: PASS — SQL and Python agree on all headline findings.
+Step 6 complete. Step 7 (modelling) is safe to begin.

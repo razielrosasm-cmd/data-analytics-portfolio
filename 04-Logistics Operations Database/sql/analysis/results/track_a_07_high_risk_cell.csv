@@ -1,0 +1,13 @@
+experience_band,incidents_band,drivers,leavers,attrition_rate_pct
+1. 0-2 years,0. no incidents,3,2,66.67
+1. 0-2 years,1. one incident,1,0,0.0
+1. 0-2 years,2. two or more,3,0,0.0
+2. 3-5 years,0. no incidents,9,2,22.22
+2. 3-5 years,1. one incident,7,0,0.0
+2. 3-5 years,2. two or more,4,0,0.0
+3. 6-10 years,0. no incidents,12,7,58.33
+3. 6-10 years,1. one incident,8,0,0.0
+3. 6-10 years,2. two or more,6,0,0.0
+4. 11+ years,0. no incidents,34,15,44.12
+4. 11+ years,1. one incident,24,0,0.0
+4. 11+ years,2. two or more,39,0,0.0

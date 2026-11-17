@@ -1,0 +1,3 @@
+utilization_over_100pct,truck_months,avg_utilization_rate,avg_total_miles,avg_total_revenue,avg_maintenance_cost,avg_truck_age_years,avg_trips
+1,436,1.11,48203.0,103477.0,1272.39,5.0,33.8
+0,2876,0.79,34325.0,73793.0,1312.46,5.1,24.0
