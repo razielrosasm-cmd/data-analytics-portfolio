@@ -1,30 +1,17 @@
 # Power BI Dashboard — Logistics Operations Database
 
+> A 3-page interactive dashboard telling the story of three analytical tracks:
+> two that are flat (attrition and delivery), and one highly actionable (maintenance).
+
+[![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-orange)]()
+
+---
+
+## Overview
+
 This folder contains the final three-page Power BI dashboard (`.pbix`), along with screenshots of each page and this documentation.
 
-The dashboard tells the story of three analytical tracks: two that are flat (attrition and on-time delivery), and one that is highly actionable (maintenance). 
-
----
-
-## Folder Structure
-
-- **`Logistics Operations.pbix`** — The main Power BI report file.
-
-- **`screenshots/`** — PNG images of all three dashboard pages for portfolio use.
-
-- **`README.md`** — This document.
-
----
-
-## The Narrative Arc
-
-The dashboard is designed to be read from left to right, page by page:
-
-1. **Page 1 (Overview): What is happening?** Sets the baseline. Shows the $4.33M total spend and the flat patterns in driver attrition and late deliveries.
-
-2. **Page 2 (Segments): Where does the signal live?** Contrasts the dramatic maintenance cost drivers against the flat, unresponsive metrics of Tracks A and B.
-
-3. **Page 3 (Action Plan): What should we do?** Translates the maintenance signal into three dollar-quantified recommendations for the Logistics Supervisor.
+The dashboard is designed to be read from left to right, page by page. It translates the statistical findings from the SQL and Python pipelines into a visual decision tool for the Logistics Supervisor.
 
 ---
 
@@ -36,8 +23,8 @@ The dashboard is designed to be read from left to right, page by page:
 ![Overview](screenshots/Overview.png)
 
 **Key Visuals:**
-- KPI cards showing total spend, total trips, and leavers.
-- Scatter or column charts showing the lack of pattern in driver turnover.
+- KPI cards showing total spend ($4.33M), total trips, and 26 leavers.
+- Column charts showing the lack of pattern in driver turnover.
 - A visual demonstrating the universally high late-delivery rate (54–57%).
 
 ### Page 2 — Segments
@@ -84,6 +71,14 @@ The dashboard is designed to be read from left to right, page by page:
 - **Text Boxes:** 
     - Each page features a single, consolidated text box at the bottom.
     - This acts as the "storyteller," explaining exactly what the charts show and what the business should do about it.
+
+---
+
+## Folder Structure
+
+- **`Logistics Operations.pbix`** — The main Power BI report file.
+- **`screenshots/`** — PNG images of all three dashboard pages for portfolio use.
+- **`README.md`** — This document.
 
 ---
 

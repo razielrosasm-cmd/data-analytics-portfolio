@@ -1,5 +1,15 @@
 # SQL Analysis — Logistics Operations Database
 
+> 28 independent queries across three analytical tracks, validating 
+> whether driver attrition, on-time delivery, and maintenance costs 
+> contain actionable signals.
+
+[![SQL](https://img.shields.io/badge/SQL-SQLite-blue)]()
+
+---
+
+## Overview
+
 This folder contains the SQLite database, the Python script used to load the data, and the 28 analysis queries that drove the findings on the dashboard. 
 
 All queries are written in standard SQLite SQL and are organized by analytical track (A, B, and C).
@@ -9,13 +19,9 @@ All queries are written in standard SQLite SQL and are organized by analytical t
 ## Folder Structure
 
 - **`db/`** — The generated SQLite database (`logistics.db`)
-
 - **`analysis/`** — 28 SQL queries, organized by track prefix (`track_a_`, `track_b_`, `track_c_`)
-
 - **`results/`** — CSV exports of every query result, used for validation and documentation
-
 - **`load_data.py`** — Python script to build the SQLite database from the processed CSVs
-
 - **`schema.sql`** — The exact table definitions and data types
 
 ---
@@ -25,13 +31,9 @@ All queries are written in standard SQLite SQL and are organized by analytical t
 To rebuild the database from scratch:
 
 1. Ensure the cleaned CSV files exist in `data/processed/` (run the Python cleaning script first if they do not).
-
 2. Navigate to this folder and run the loader:
-
    `cd sql`
-   
    `python load_data.py`
-
 3. The script will create `db/logistics.db` and populate it with the three master tables.
 
 ---
@@ -43,7 +45,6 @@ The analysis is divided into three tracks. Each track answers a specific operati
 ### Track A — Driver Attrition (11 Queries)
 
 **Objective:** Determine if driver turnover can be predicted by experience, terminal, or safety records.
-
 **Result:** All tests returned flat. Turnover does not correlate with any available behavioural or operational metric. 
 
 | Query File | What It Tests |
@@ -63,7 +64,6 @@ The analysis is divided into three tracks. Each track answers a specific operati
 ### Track B — On-Time Delivery (10 Queries)
 
 **Objective:** Identify which operational segments cause late deliveries.
-
 **Result:** The late rate is universally flat at **54–57%** across all 28 independent tests. No operational signal exists.
 
 | Query File | What It Tests |
@@ -74,16 +74,15 @@ The analysis is divided into three tracks. Each track answers a specific operati
 | `track_b_03_by_route.sql` | Late rate by specific route |
 | `track_b_04_by_customer_type.sql` | Late rate by customer segment |
 | `track_b_05_by_booking_type.sql` | Late rate by booking method (e.g., app vs. manual) |
-| `track_b_06_by_distance_band.sql` | Late rate by trip distance (Under 500, 500-999, etc.) |
+| `track_b_06_by_distance_band.sql` | Late rate by trip distance |
 | `track_b_07_by_detention.sql` | Late rate by time spent waiting at facilities |
 | `track_b_08_by_idle.sql` | Late rate by truck idle time |
 | `track_b_09_high_risk_cell.sql` | Tests intersections (e.g., long distance + high detention) |
 | `track_b_10_by_month.sql` | Tests for seasonality (month-over-month late rates) |
 
-### Track C — Maintenance (8 Queries)
+### Track C — Maintenance (7 Queries)
 
 **Objective:** Identify the true drivers of high-cost maintenance months.
-
 **Result:** **Actionable.** Two factors dominate: preventive shop visits (12.5x higher odds) and downtime hours (7.6% higher odds per hour).
 
 | Query File | What It Tests |
@@ -112,7 +111,5 @@ These CSVs were used to build the dashboard charts and validate the Python logis
 The database contains three main tables:
 
 - **`driver`** — One row per driver (includes hire date, terminal, safety incidents, and attrition status)
-
 - **`trip`** — One row per trip (includes distance, route, customer type, and on-time flags)
-
 - **`truck_month`** — One row per truck per month (includes maintenance cost, preventive visits, downtime hours, and miles driven). **This is the core table for the actionable Track C analysis.**
