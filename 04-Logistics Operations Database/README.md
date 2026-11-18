@@ -6,6 +6,28 @@ The short answer: **maintenance**. Two other tracks — driver turnover and on-t
 
 ---
 
+## The Dashboard
+
+A three-page Power BI report tells the story in sequence. 
+
+### Page 1 — Overview
+*What is happening: headline numbers, flat patterns, discovery.*
+![Overview Dashboard](powerbi/screenshots/Overview.png)
+
+### Page 2 — Segments
+*Where the signal lives: Track C vivid vs Tracks A/B flat.*
+![Segments Dashboard](powerbi/screenshots/Segments.png)
+
+### Page 3 — Action Plan
+*What to do: three quantified recommendations.*
+![Action Plan Dashboard](powerbi/screenshots/Action%20Plan.png)
+
+Open the dashboard locally: **`powerbi/Logistics Operations.pbix`**
+
+Full page-by-page documentation: [`powerbi/README.md`](powerbi/README.md)
+
+---
+
 ## The Headline Finding
 
 Of three analytical tracks, **one is actionable**:
@@ -20,7 +42,7 @@ The counterintuitive finding: **adding 10% more preventive visits would increase
 
 ---
 
-## The Three Recommendations (Page 3 of the Dashboard)
+## The Three Recommendations
 
 | # | Recommendation | Estimated Annual Impact |
 |---|---|---|
@@ -32,29 +54,13 @@ The counterintuitive finding: **adding 10% more preventive visits would increase
 
 ---
 
-## The Dashboard
-
-A three-page Power BI report tells the story in sequence:
-
-| Page | Purpose | File |
-|---|---|---|
-| **1 — Overview** | What is happening: headline numbers, flat patterns, discovery | `powerbi/screenshots/Overview.png` |
-| **2 — Segments** | Where the signal lives: Track C vivid vs Tracks A/B flat | `powerbi/screenshots/Segments.png` |
-| **3 — Action Plan** | What to do: three quantified recommendations | `powerbi/screenshots/Action Plan.png` |
-
-Open the dashboard: **`powerbi/Logistics Operations.pbix`**
-
-Full page-by-page documentation: [`powerbi/README.md`](powerbi/README.md)
-
----
-
 ## Project Structure
 
 - **`data/`**
   - **`raw/`** — 16 original source CSVs (unmodified)
   - **`processed/`** — 3 cleaned master files ready for analysis
 
-- **`docs/`** — codebook, data inventory, logs, model notes
+- **`docs/`** — codebook, data inventory, logs, model notes, executive summary
 
 - **`powerbi/`** — the dashboard (.pbix), screenshots, README
 
@@ -187,14 +193,6 @@ The modelling approach, variable selection, and validation are documented in [`d
 
 ---
 
-## Data Honesty Note
-
-Two of the three tracks came back flat. Rather than hiding this, the dashboard **leads with it**. The flat results are themselves a finding: the data does not contain the operational variation those analyses need. This is documented openly in `docs/executive_summary.md` and on Page 2 of the dashboard.
-
-Before investing in predictive programmes for attrition or on-time delivery, the recommendation is to **commission data audits** — capture behavioural records for departing drivers, and validate the on-time flag against actual customer service reports.
-
----
-
 ## Project Status
 
 | Component | Status |
@@ -207,4 +205,3 @@ Before investing in predictive programmes for attrition or on-time delivery, the
 | Documentation | ✅ Complete |
 
 **Version:** 1.0
-**Last updated:** November 2026

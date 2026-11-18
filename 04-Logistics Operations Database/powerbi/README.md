@@ -31,8 +31,9 @@ The dashboard is designed to be read from left to right, page by page:
 ## Page-by-Page Breakdown
 
 ### Page 1 — Overview
+*What is happening: headline numbers, flat patterns, discovery.*
 
-**Purpose:** Establish the headline numbers and the discovery that two out of three tracks are statistically flat.
+![Overview](screenshots/Overview.png)
 
 **Key Visuals:**
 - KPI cards showing total spend, total trips, and leavers.
@@ -40,8 +41,9 @@ The dashboard is designed to be read from left to right, page by page:
 - A visual demonstrating the universally high late-delivery rate (54–57%).
 
 ### Page 2 — Segments
+*Where the signal lives: Track C vivid vs Tracks A/B flat.*
 
-**Purpose:** Provide a vivid visual contrast between the actionable maintenance data and the flat data from the other tracks.
+![Segments](screenshots/Segments.png)
 
 **Key Visuals:**
 - **Track C (Green):**
@@ -52,8 +54,9 @@ The dashboard is designed to be read from left to right, page by page:
     - Late delivery rate by trip distance (a completely flat line around 55%).
 
 ### Page 3 — Action Plan
+*What to do: three quantified recommendations.*
 
-**Purpose:** Give the supervisor exact, quantified actions based on the maintenance model.
+![Action Plan](screenshots/Action%20Plan.png)
 
 **Key Visuals:**
 - Three recommendation text boxes (two green for savings, one red for a warning).
@@ -65,7 +68,7 @@ The dashboard is designed to be read from left to right, page by page:
 
 ## Design Standards & UI
 
-- **Language:** B2 English. No statistical jargon (e.g., no "p-value" or "odds ratio"; instead, "12 times more likely" or "no clear effect").
+- **Language:** Plain English. No statistical jargon (e.g., no "p-value" or "odds ratio"; instead, "12 times more likely" or "no clear effect").
 
 - **Colors:**
     - **Dark Green (`#375623`)**: Actionable, positive, maintenance savings.
