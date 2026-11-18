@@ -1,6 +1,6 @@
 # Data Analytics Portfolio
 
-**3 end-to-end projects** spanning e-commerce, manufacturing operations, and HR analytics — each taking raw data through SQL, Python, and Power BI into actionable business decisions.
+**4 end-to-end projects** spanning e-commerce, manufacturing operations, HR analytics, and logistics operations — each taking raw data through SQL, Python, and Power BI into actionable business decisions.
 
 Welcome to my data analytics portfolio. This repository contains complete analyst workflows focused on transforming raw data into business insights using SQL, Python, and Power BI.
 
@@ -59,11 +59,31 @@ An end-to-end HR analytics project analyzing employee attrition, first-year work
 * The Year-1 Workload Shock (tenure × hours overlap)
 * Environmental, job, and work-life satisfaction drivers
 * Year-7 career cliff anomaly
-* Logistic regression and risk-band calibration
+* Predictive model and risk-band calibration
 * Business recommendations and what-if impact projections
 
 **Project:**
 [View HR Analytics Case Study](./03-HR%20Analytics%20Case/)
+
+---
+
+### 04 — Logistics Operations — Fleet Maintenance & Cost Savings
+
+An end-to-end logistics analytics project analyzing driver attrition, on-time delivery performance, and fleet maintenance costs to uncover operational savings.
+
+**Tools:** SQL · Python · Power BI
+
+**Key areas analyzed:**
+
+* Baseline fleet spend and driver turnover patterns
+* On-time delivery performance across routes and distances
+* Maintenance cost drivers (preventive visits and downtime)
+* High-risk segment profiling and risk-score calibration
+* What-if simulations to test operational policies
+* Business recommendations to save $950K–$1.27M annually
+
+**Project:**
+[View Logistics Operations Database](./04-Logistics%20Operations%20Database/)
 
 ---
 
@@ -75,7 +95,7 @@ An end-to-end HR analytics project analyzing employee attrition, first-year work
 | Business Intelligence | Power BI                                                                             |
 | Data Visualization    | Power BI, Python                                                                     |
 | Database Analysis     | SQLite, SQL                                                                          |
-| Business Analysis     | KPI analysis, conversion analysis, funnel analysis, attrition & retention modeling   |
+| Business Analysis     | KPI analysis, conversion analysis, funnel analysis, retention modeling, cost-driver analysis |
 | Reporting             | Executive dashboards and business recommendations                                    |
 
 ---
@@ -87,6 +107,7 @@ An end-to-end HR analytics project analyzing employee attrition, first-year work
 | [Maven Fuzzy Factory](./01-Maven-Fuzzy-Factory/)                                                               | E-commerce analytics, marketing, conversion, products, revenue                     | SQL · Python · Power BI |
 | [Manufacturing Line Productivity & Downtime Analysis](./02-Manufacturing-Line-Productivity-Downtime-Analysis/) | Manufacturing productivity, efficiency, downtime, operator and product performance | SQL · Python · Power BI |
 | [HR Analytics Case Study](./03-HR%20Analytics%20Case/)                                                         | Employee attrition, predictive modeling, workload and satisfaction analysis        | SQL · Python · Power BI |
+| [Logistics Operations Database](./04-Logistics%20Operations%20Database/)                                       | Fleet maintenance, driver attrition, on-time delivery, cost savings                | SQL · Python · Power BI |
 
 ---
 
